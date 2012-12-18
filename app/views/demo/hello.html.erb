@@ -1,0 +1,28 @@
+<h1>Demo#hello</h1>
+<p>Hello World!</p>
+<p>Other template... The 'Hello' template!</p>
+
+<p>id =&gt; <%= params[:id] %></p>
+<p>Next page: <%= @page.to_i + 1 %>...</p>
+
+<% target = 'world' %>
+<%= "Hello #{target}" %>
+
+<%
+=begin %>
+  <ul>
+  <!-- Não posso usar isso, pois está definido na action 'hello', mas
+  essa action é rederizada a partir da action 'index'. -->
+  <% @arr.each do |n| %>
+    <li><%= n %></li>
+  <% end %>
+  </ul>
+<%
+=end %>
+
+<p><%= link_to('my first link', '/demo/index') %></p>
+<p><%= link_to('my second link', {:controller => 'demo', :action => 'index'}) %></p>
+
+<p><%= link_to('Go to the template \'test\'...', {:controller => 'demo', :action => 'test'}) %></p>
+
+<p><%= params.inspect %></p>
